@@ -2,7 +2,7 @@
   position: absolute;;
   top: 50%;
   -webkit-transform: translateY(-50%);
-  -ms-transform: translateY(-50%);
+  -moz-transform: translateY(-50%);
   transform: translateY(-50%);
 }
 
@@ -20,12 +20,13 @@
 @phone-strict:   ~"only screen and (max-width: @{xs-min})";
 
 .text-message(){
-  // width: 56%;
   padding: 10px;
   position:relative;
-  // margin:20px auto;
   font-size:12px;
   font-family: Helvetica;
+  word-wrap: break-word;
+  -ms-word-break: break-all;
+  word-break: break-all;
 }
 
 .removeFlick() {-webkit-tap-highlight-color: rgba(0, 0, 0, 0);}
@@ -41,9 +42,12 @@
   position:relative;
   background: #eceaeb;
   overflow:auto;
+  -webkit-transition: background-color 1s;
+  -moz-transition: background-color 1s;
   @media @phone-strict {
     width:100%;
     height:100%;
+    min-height:100%;
     position:absolute;
     top:0;
     left:0;
@@ -66,26 +70,25 @@
       .user-name{
         color:black;
         font-size:21px;
-        margin:15px 15px 0px;
+        margin-top:15px;
       }
       .user-city{
         color:pink;
         font-size:13px;
-        margin:0px 15px 10px;
+        margin-bottom:10px;
       }
       .user-description{
         font-size:13px;
-        margin:0px 15px;
       }
   }
-  .user-online{
+  .online-chat{
     width:60px;
     height:60px;
     border-radius: 30px;
     background-color: #41ee96;
     position:absolute;
     top:5px;
-    right:35px;
+    right:-7px;
     z-index:2;
     text-align:center;
     span {
@@ -155,7 +158,7 @@
       margin-bottom:20px;
       .profile-pic{
         a{
-          background-image:url('../assets/profile_avatar_sm.png');
+          background-image:url('../assets/profile_avatar_send.png');
           background-size: 100% 100%;
           float:right;
           width:40px;
@@ -184,10 +187,12 @@
 }
 &.touched{
   -webkit-transition: background-color 1s;
+  -moz-transition: background-color 1s;
   background-color:#faf4fc;
   .add-friend-btn{
     .btn-text{
       -webkit-transition: background-color .5s;
+      -moz-transition: background-color .5s;
       background-color: #c7a4ea;
     }
   }
@@ -224,6 +229,7 @@
       font-family: Helvetica;
       font-size: 20px;
       text-align: center;
+      margin-top: 5px;
     }
   }
 
@@ -239,8 +245,10 @@
     font-size: 12px;
     text-align:center;
     .btn-text{
+      -webkit-transition: background-color .5s;
+      -moz-transition: background-color .5s;
       background-color: @btn_init;
-      margin: 0 15px;
+      margin: 0 auto;
       padding:18px 0px;
       .removeFlick();
 
@@ -259,12 +267,16 @@
       input[type=text] {
         -webkit-appearance: none; -moz-appearance: none;
         display: block;
-        padding:5%;
+        padding:5% 7%;
         width:90%;
         height: 20px;
         line-height: 20px;
         border: 1px solid #fff;
+        &:focus{
+          outline: none;
+        }
       }
+
       .pin{
         background-image: url('../assets/pin.png');
         background-repeat: no-repeat;

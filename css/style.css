@@ -8,11 +8,14 @@
   position: relative;
   background: #eceaeb;
   overflow: auto;
+  -webkit-transition: background-color 1s;
+  -moz-transition: background-color 1s;
 }
 @media only screen and (max-width: 480px) {
   .container {
     width: 100%;
     height: 100%;
+    min-height: 100%;
     position: absolute;
     top: 0;
     left: 0;
@@ -38,29 +41,28 @@
 .container .profile-container .user-information .user-name {
   color: black;
   font-size: 21px;
-  margin: 15px 15px 0px;
+  margin-top: 15px;
 }
 .container .profile-container .user-information .user-city {
   color: pink;
   font-size: 13px;
-  margin: 0px 15px 10px;
+  margin-bottom: 10px;
 }
 .container .profile-container .user-information .user-description {
   font-size: 13px;
-  margin: 0px 15px;
 }
-.container .profile-container .user-online {
+.container .profile-container .online-chat {
   width: 60px;
   height: 60px;
   border-radius: 30px;
   background-color: #41ee96;
   position: absolute;
   top: 5px;
-  right: 35px;
+  right: -7px;
   z-index: 2;
   text-align: center;
 }
-.container .profile-container .user-online span {
+.container .profile-container .online-chat span {
   color: white;
   margin-top: 25px;
   display: block;
@@ -108,6 +110,9 @@
   position: relative;
   font-size: 12px;
   font-family: Helvetica;
+  word-wrap: break-word;
+  -ms-word-break: break-all;
+  word-break: break-all;
   background-color: #4abae0;
   color: white;
 }
@@ -126,7 +131,7 @@
   margin-bottom: 20px;
 }
 .container .chat-container .chat-content .sender-chat .profile-pic a {
-  background-image: url('../assets/profile_avatar_sm.png');
+  background-image: url('../assets/profile_avatar_send.png');
   background-size: 100% 100%;
   float: right;
   width: 40px;
@@ -140,6 +145,9 @@
   position: relative;
   font-size: 12px;
   font-family: Helvetica;
+  word-wrap: break-word;
+  -ms-word-break: break-all;
+  word-break: break-all;
   background-color: #ffffff;
 }
 .container .chat-container .chat-content .sender-chat .text-message .pin {
@@ -154,10 +162,12 @@
 }
 .container.touched {
   -webkit-transition: background-color 1s;
+  -moz-transition: background-color 1s;
   background-color: #faf4fc;
 }
 .container.touched .add-friend-btn .btn-text {
   -webkit-transition: background-color 0.5s;
+  -moz-transition: background-color 0.5s;
   background-color: #c7a4ea;
 }
 .container .header {
@@ -180,7 +190,7 @@
   position: absolute;
   top: 50%;
   -webkit-transform: translateY(-50%);
-  -ms-transform: translateY(-50%);
+  -moz-transform: translateY(-50%);
   transform: translateY(-50%);
   color: white;
 }
@@ -198,6 +208,7 @@
   font-family: Helvetica;
   font-size: 20px;
   text-align: center;
+  margin-top: 5px;
 }
 .container .add-friend-btn {
   width: 100%;
@@ -211,8 +222,10 @@
   text-align: center;
 }
 .container .add-friend-btn .btn-text {
+  -webkit-transition: background-color 0.5s;
+  -moz-transition: background-color 0.5s;
   background-color: #3a3a3a;
-  margin: 0 15px;
+  margin: 0 auto;
   padding: 18px 0px;
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
@@ -234,11 +247,14 @@
   -webkit-appearance: none;
   -moz-appearance: none;
   display: block;
-  padding: 5%;
+  padding: 5% 7%;
   width: 90%;
   height: 20px;
   line-height: 20px;
   border: 1px solid #fff;
+}
+.container .form-box .message-box input[type=text]:focus {
+  outline: none;
 }
 .container .form-box .message-box .pin {
   background-image: url('../assets/pin.png');
