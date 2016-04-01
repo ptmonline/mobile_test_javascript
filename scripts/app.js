@@ -36,7 +36,7 @@
         var NewMessage = function(message){
           this.message = message;
           this.template = '<div class="sender-chat row">'+
-          '<div class="profile-pic column column-2"><a ng-href="index.html">&nbsp;</a></div>'+
+          '<div class="profile-pic column column-2"><a href="index.html">&nbsp;</a></div>'+
           '<div class="text-message column column-9  col-span-1-right"><span class="pin">&nbsp;</span>'+this.message+'</div></div>';
         }
 
@@ -51,6 +51,7 @@
           })
         }
 
+        //user message input
         $('.message-box').on('submit', function(){
             newMessage = $('.newmessage').val();
             if(!$('.newmessage').val()){
