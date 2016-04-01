@@ -3,10 +3,11 @@
 }
 .container {
   width: 435px;
-  height: 773px;
+  min-height: 773px;
   margin: 0 auto;
   position: relative;
   background: #eceaeb;
+  overflow: hidden;
 }
 @media only screen and (max-width: 480px) {
   .container {
@@ -22,6 +23,7 @@
 .container .profile-container {
   position: relative;
   margin-top: 80px;
+  float: left;
 }
 .container .profile-container .user-avatar {
   position: relative;
@@ -66,17 +68,19 @@
 }
 .container .chat-container {
   position: relative;
-  margin-top: 80px;
+  margin: 80px 0;
+  display: block;
+  float: left;
 }
 .container .chat-container .chat-content .receiver-chat {
   position: relative;
   margin-bottom: 20px;
 }
 .container .chat-container .chat-content .receiver-chat .profile-pic a {
-  background-image: url('../assets/profile_avatar.png');
+  background-image: url('../assets/profile_avatar_sm.png');
   background-size: 100% 100%;
   width: 40px;
-  height: 40px;
+  height: 39px;
   float: left;
   display: block;
   text-decoration: none;
@@ -104,11 +108,11 @@
   margin-bottom: 20px;
 }
 .container .chat-container .chat-content .sender-chat .profile-pic a {
-  background-image: url('../assets/profile_avatar.png');
+  background-image: url('../assets/profile_avatar_sm.png');
   background-size: 100% 100%;
   float: right;
   width: 40px;
-  height: 40px;
+  height: 39px;
   display: block;
   text-decoration: none;
 }
@@ -143,9 +147,14 @@
   background-color: #3a3a3a;
   color: white;
   padding-top: 10px;
-  position: fixed;
+  position: absolute;
   top: 0;
   z-index: 999;
+}
+@media only screen and (max-width: 480px) {
+  .container .header {
+    position: fixed;
+  }
 }
 .container .header .back-btn {
   left: 15px;
