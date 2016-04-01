@@ -7,7 +7,7 @@
   margin: 0 auto;
   position: relative;
   background: #eceaeb;
-  overflow: hidden;
+  overflow: auto;
 }
 @media only screen and (max-width: 480px) {
   .container {
@@ -68,9 +68,12 @@
 }
 .container .chat-container {
   position: relative;
-  margin: 80px 0;
+  margin: 80px 0 0;
   display: block;
   float: left;
+}
+.container .chat-container .chat-content {
+  margin-bottom: 80px;
 }
 .container .chat-container .chat-content .receiver-chat {
   position: relative;
@@ -84,6 +87,18 @@
   float: left;
   display: block;
   text-decoration: none;
+}
+.container .chat-container .chat-content .receiver-chat .profile-pic .online-chat {
+  width: 10px;
+  height: 10px;
+  border-radius: 5px;
+  position: absolute;
+  bottom: 0px;
+  right: 25px;
+  background-color: red;
+}
+.container .chat-container .chat-content .receiver-chat .profile-pic .online-chat.online {
+  background-color: green;
 }
 .container .chat-container .chat-content .receiver-chat .text-message {
   padding: 10px;
@@ -198,6 +213,12 @@
 .container .form-box {
   position: absolute;
   bottom: 10px;
+  background: #eceaeb;
+}
+@media only screen and (max-width: 480px) {
+  .container .form-box {
+    position: fixed;
+  }
 }
 .container .form-box .message-box {
   font-family: Helvetica;

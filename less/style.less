@@ -1,6 +1,5 @@
 .vertical-alignment() {
   position: absolute;;
-  // width: 30px;
   top: 50%;
   -webkit-transform: translateY(-50%);
   -ms-transform: translateY(-50%);
@@ -38,7 +37,7 @@
   margin:0 auto;
   position:relative;
   background: #eceaeb;
-  overflow:hidden;
+  overflow:auto;
   @media @phone-strict {
     width:100%;
     height:100%;
@@ -97,19 +96,15 @@
 }
 .chat-container{
   position: relative;
-  margin:80px 0;
+  margin:80px 0 0;
   display:block;
   float:left;
   .chat-content{
+    margin-bottom:80px;
     .receiver-chat{
       position:relative;
       margin-bottom:20px;
       .profile-pic{
-        // position:absolute;
-        // top:0px;
-        // right:25px;
-        // width:30px;
-        // height:30px;
         a{
           background-image:url('../assets/profile_avatar_sm.png');
           background-size: 100% 100%;
@@ -118,6 +113,18 @@
           float:left;
           display:block;
           text-decoration:none;
+        }
+        .online-chat{
+          width:10px;
+          height:10px;
+          border-radius: 5px;
+          position:absolute;
+          bottom:0px;
+          right:25px;
+          background-color:red;
+          &.online{
+            background-color:green;
+          }
         }
       }
       .text-message{
@@ -140,11 +147,6 @@
       position:relative;
       margin-bottom:20px;
       .profile-pic{
-        // position:absolute;
-        // top:0px;
-        // left:15px;
-        // width:30px;
-        // height:30px;
         a{
           background-image:url('../assets/profile_avatar_sm.png');
           background-size: 100% 100%;
@@ -171,21 +173,6 @@
       }
     }
   }
-  // width: 100%;
-  // box-sizing: border-box;
-  // position:absolute;
-  // bottom:10px;
-  // left:0;
-  // color:white;
-  // font-family: Helvetica;
-  // font-size: 12px;
-  // text-align:center;
-  // .btn-text{
-  //   background-color: @btn_init;
-  //   margin: 0 15px;
-  //   padding:18px 0px;
-  //
-  // }
 }
 &.touched{
   -webkit-transition: background-color 1s;
@@ -252,9 +239,11 @@
   .form-box {
     position:absolute;
     bottom:10px;
+    background: #eceaeb;
+    @media @phone-strict {
+      position:fixed;
+    }
     .message-box{
-      // position:absolute;
-      // bottom:10px;
       font-family: Helvetica;
       font-size: 12px;
       input[type=text] {
@@ -279,5 +268,4 @@
       }
     }
   }
-
 }
