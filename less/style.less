@@ -27,6 +27,9 @@
   font-size:12px;
   font-family: Helvetica;
 }
+
+.removeFlick() {-webkit-tap-highlight-color: rgba(0, 0, 0, 0);}
+
 .wrapper{
   background: #eceaeb;
 }
@@ -55,6 +58,7 @@
       position:relative;
       width:228px;
       margin:40px auto 0;
+      .removeFlick();
     }
     .user-information{
       width:100%;
@@ -113,19 +117,22 @@
           float:left;
           display:block;
           text-decoration:none;
-        }
-        .online-chat{
-          width:10px;
-          height:10px;
-          border-radius: 5px;
-          position:absolute;
-          bottom:0px;
-          right:25px;
-          background-color:red;
-          &.online{
-            background-color:green;
+          position:relative;
+          .removeFlick();
+          .online-chat{
+            width:10px;
+            height:10px;
+            border-radius: 5px;
+            position:absolute;
+            bottom:0px;
+            right:0px;
+            background-color:red;
+            &.online{
+              background-color:green;
+            }
           }
         }
+
       }
       .text-message{
         .text-message();
@@ -155,6 +162,7 @@
           height:39px;
           display:block;
           text-decoration:none;
+          .removeFlick();
         }
       }
       .text-message{
@@ -209,6 +217,7 @@
         width:30px;
         height:30px;
         display:block;
+        .removeFlick();
       }
     }
     .user-name{
@@ -233,6 +242,7 @@
       background-color: @btn_init;
       margin: 0 15px;
       padding:18px 0px;
+      .removeFlick();
 
     }
   }
@@ -249,7 +259,6 @@
       input[type=text] {
         -webkit-appearance: none; -moz-appearance: none;
         display: block;
-        // margin: 0 auto;
         padding:5%;
         width:90%;
         height: 20px;
