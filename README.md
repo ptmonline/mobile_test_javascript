@@ -1,1 +1,3 @@
-# Simple chat Javascript file
+# Simple chat
+
+*javascript test*
