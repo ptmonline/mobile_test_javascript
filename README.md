@@ -1,3 +1,3 @@
 # Simple chat
 
-*javascript test*
+*javascript simple test*
